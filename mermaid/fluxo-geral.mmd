@@ -1,0 +1,10 @@
+flowchart TD
+    A((1. Trigger)) -->|Domingo 11:50| B[2. Cálculo de Datas]
+    B -->|Range Semanal| C[3. Conexão Notion]
+    C -->|Obter Rotinas| D1[Database 2: Rotina Diária]
+    C -->|Obter Resumos| D2[Database 3: Análise]
+    D1 --> E[4. Tratamento de Dados]
+    D2 --> E
+    E -->|Payload Limpo| F[5. Agente de IA Chronus]
+    F -->|Relatório Gerado| G[6. Gerador de PDF]
+    G -->|Mensagem + Anexo PDF| H[7. Telegram]
